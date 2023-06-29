@@ -88,7 +88,12 @@ app.post('/api/persons', (req, resp) => {
 	}
 })
 
-const PORT = 3001
+app.get('/', (request, response) => {
+	response.send(`<h1>Phonebook backend<h2>`)
+})
+
+const PORT = process.env.PORT || 3001
+
 app.listen(PORT, () => {
 	console.log(`Server Running on port: ${PORT}`)
 })
